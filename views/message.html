@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>textinput demo</title>
+<link rel="stylesheet" href="/static/jquery/jquery.mobile-1.3.2.min.css">
+<script src="/static/jquery/jquery-1.9.1.min.js"></script>
+<script src="/static/jquery/jquery.mobile-1.3.2.min.js"></script>
+
+</head>
+<body>
+	<div data-role="page" id="page1">
+	<div data-role="header">
+		<h1>我的消息</h1>
+	</div>
+	<div data-role="content">	
+%for msg in msgs:
+		<ul data-role="listview" data-inset="true" data-theme="d">
+			<li><a href="/message_details/{{msg["id"]}}">{{msg["user"]["nickname"]}}&nbsp;{{msg["text"]}}</a></li>
+		</ul>
+%end for
+		
+	</div>
+</body>
+</html>

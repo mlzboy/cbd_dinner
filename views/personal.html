@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>textinput demo</title>
+<link rel="stylesheet" href="/static/jquery/jquery.mobile-1.3.2.min.css">
+<script src="/static/jquery/jquery-1.9.1.min.js"></script>
+<script src="/static/jquery/jquery.mobile-1.3.2.min.js"></script>
+
+<style type="text/css">
+.ui-li-thumb, .ui-li-icon {
+    left: 8px;
+    max-height: 70px; 
+    max-width: 70px; 
+    align:center
+}
+</style>
+</head>
+	<body>
+		<div data-role="header">
+			<h1>我</h1>
+		</div>
+		<div data-role="content">	
+			<ul data-role="listview" data-inset="true" data-theme="d">
+				<li><a href="html/personal_detail.html">
+				<img src="{{user["photo1"]}}"/>
+				<h3>{{user["nickname"]}}</h3>
+				<p>账号：<label name="account">{{user["username"]}}</label></p>
+				</p>
+				</a>
+				</li>
+			</ul>
+			
+			<ul data-role="listview" data-inset="true" data-theme="d">
+				<li><a href="/message"><img src="images/gf.png"  class="ui-li-icon">message centor <span class="ui-li-count">4</span></a></li>
+				<li><a href="/apply_records"><img src="images/gf.png"  class="ui-li-icon">apply_records<span class="ui-li-count">4</span></a></li>
+				<li><a href="/follows"><img src="images/gf.png"  class="ui-li-icon">my follows<span class="ui-li-count">4</span></a></li>
+				<li><a href="/my_fans"><img src="images/gf.png"  class="ui-li-icon">my fans<span class="ui-li-count">4</span></a></li>
+				<li><a href="/my_created_dinners"><img src="images/gf.png"  class="ui-li-icon">my_created_dinners<span class="ui-li-count">4</span></a></li>
+				<li><a href="/my_created_dinners"><img src="images/gf.png"  class="ui-li-icon">my_created_dinners<span class="ui-li-count">4</span></a></li>
+				<li><a href="/my_dinner_records"><img src="images/gf.png"  class="ui-li-icon">my_dinner_records<span class="ui-li-count">4</span></a></li>
+				<li><a href="/my_dinner"><img src="images/gf.png" alt="France" class="ui-li-icon">my dinner<span class="ui-li-count">4</span></a></li>
+				<li><a href="/my_pay_history"><img src="images/gf.png" alt="France" class="ui-li-icon">my payment <span class="ui-li-count">4</span></a></li>
+			</ul>
+			
+			<a href="/create_dinner" data-role="button" id="profile_logout" data-theme="b">create dinner</a>
+			<a href="/logout" data-role="button" id="profile_logout" data-theme="e">logout</a>
+		</div>
+	</body>
+</html>

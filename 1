@@ -1,0 +1,175 @@
+#!/usr/bin/env python
+#encoding=utf-8
+import bottle
+from bottle import route, run, template,request
+import os.path,sys,shutil,os
+reload(sys)
+os.chdir(os.path.dirname(__file__))
+sys.setdefaultencoding('utf8')
+path=os.path.join(os.getcwd(),"cbd")
+print path
+sys.path.append(path)
+from django.core.management import setup_environ
+import settings
+setup_environ(settings)
+from dinner.models import *
+from django.db.models import Q
+import codecs
+from beaker.middleware import SessionMiddleware
+
+def auth(handler):
+ 	def _check_auth(*args,**kwargs):
+		if _is_login():
+			return handler(user,*args,**kwargs)
+		else:
+			bottle.redirect('/login')
+	return _check_auth
+
+def _is_login():
+	session = bottle.request.environ["beaker.session"]
+	if "username" in session:
+		return True
+	else:
+		return False
+
+def _get_username():
+	session = bottle.request.environ["beaker.session"]
+	if "username" in session:
+		return session["username"]
+	return None
+
+def _load_view(path):
+	lines=[]
+	for line in codecs.open(path,"r","utf-8").readlines():
+		lines.append(line)
+	ret = "".join(lines)
+	return ret
+
+
+@route('/logout')
+def logout():
+	session = bottle.request.environ["beaker.session"]
+	if "username" in session:
+		del session["username"]
+	return bottle.redirect('/')
+
+@route('/register')
+def register():
+	return _load_view("./views/register.html")
+
+@route('/register',method='POST')
+def register_post():
+	ret = {}
+	print "register_post"
+	print request.json
+	for elem in request.headers:
+		print elem
+	print request.content_type
+	f=request.body
+	for line in f:
+		print line
+	print request.forms
+	username = request.forms["username"].lower().strip()
+	passwd   = request.forms["passwd"].lower().strip()
+	if User.objects.filter(username = username).count() == 0:
+		session = bottle.request.environ["beaker.session"]
+		session["username"] = username	
+		User.objects.create(username = username, passwd = passwd)
+		ret["msg"] = "ok"
+	else:
+		ret["msg"] = "not ok"
+
+	for elem in request.forms:
+		print elem,request.forms[elem]
+	print ret["msg"]
+	return ret
+
+@route('/login')
+def login():
+	print "login page"
+	return template('login')
+
+@route('/login',method='POST')
+def login_post():
+	ret = {}
+	username = request.forms["username"].lower().strip()
+	passwd   = request.forms["passwd"].lower().strip()
+	if User.objects.filter(username = username).count() == 1:
+		session = bottle.request.environ["beaker.session"]
+		session["username"] = username
+		ret["msg"] = "ok"
+	else:
+		ret["msg"] = "not ok"
+	print ret["msg"]
+	print "login_post"
+	return ret
+	
+
+@route('/')
+def home():
+	"""
+	根据session["filter"]条件进行过滤返回数据
+	"""
+	tpl =  _load_view("./views/home.html")
+	ret = {}
+	ret["is_login"] = _is_login()
+	ret["username"] = _get_username()
+	return template(tpl, ret)
+	
+@route('/filter')
+def filter():
+	return _load_view("./views/filter.html")
+
+@route('/filter',method='POST')
+def filter_post():
+	"""
+	构建筛选条件
+	"""
+	ret = {}
+	ret["msg"] = "ok"
+	filter = {}
+	print "filter post"
+	for elem in request.forms:
+		val = request.forms[elem]
+		if val <> "全部":
+			filter[elem] = val;
+			print "cond:",elem,val
+			
+	session = bottle.request.environ["beaker.session"]
+	session["filter"] = filter
+	print session["filter"]
+	return ret
+
+@route('/profile')
+def profile():
+	"""
+	/profile/username
+	"""
+	session = bottle.request.environ["beaker.session"]
+	print session["username"]
+	print "profile get"
+	return session["username"]
+
+
+@route('/basic_profile')
+def basic_profile():
+	print "basic_profile"
+	return template('basic_profile')
+
+@route('/basic_profile',method='POST')
+def basic_profile_post():
+	print "basic_profile_post"
+
+
+if __name__ == "__main__":
+	session_opts = {
+		"session.type": "file",
+		'session.cookie_expires': True,
+		'session.auto': True,
+		'session.data_dir': "cache",
+	}
+
+	app = bottle.default_app()
+	app.autojson = True
+	app = SessionMiddleware(app, session_opts)
+	run(app = app,reloader = True,host='0.0.0.0',port = 80)

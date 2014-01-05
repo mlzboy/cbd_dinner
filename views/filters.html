@@ -1,0 +1,94 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CBD晚餐</title>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css">
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+</head>
+<script type="text/javascript">
+function finished(){
+	$.post('http://192.168.201.75/filters',{ 
+		//参数一
+		gender: $('#gender').val(), 
+		//参数二
+		education: $("#education").val(),
+		//参数三
+		salary: $("#salary").val() 
+	},
+	//回调函数 
+	function(theback) 
+	{
+		alert("hha");
+		console.debug(theback);
+		if (theback.msg == 'ok')
+		{
+			window.location.href="http://192.168.201.75/";
+		}
+		else
+		{
+			alert(theback.msg);
+		}
+	},
+	//返回类型
+	"json"
+	);
+
+}
+
+$("div[data-role='page']").live('pageshow',function(event,ui){
+    		$("#finished").live('click tap',function(){
+		
+			finished();
+		});
+
+	});
+    //高亮当前menu
+    // $("#goodsNav").addClass("ui-btn-active");
+});
+</script>
+<body>
+
+<div data-role="page" id="filters">
+
+	<form name="filters" id="filters" data-ajax="false"  method="post" action="http://192.168.201.75/filters">
+	<div data-role="header" data-position="inline" data-backbtn="false">
+		<h1>CBD晚餐 筛选条件</h1>
+	<input type="submit" id="btnFinished" value="完成" data-icon="check" class="ui-btn-right" />
+	<!--	<span data-ajax="false" data-icon="check" class="ui-btn-right" data-role="button" id="finished">完成</span>-->
+		
+	</div>
+	<div data-role="content">
+					<label for="gender"> 性别:</label>
+					<select name="gender" id="gender">
+							<option value="全部" >全部</option>
+							<option value="男" >男</option>
+							<option value="女" >女</option>
+					</select>
+
+					<label for="education"> 学历:</label>
+					<select name="education" id="education">
+							<option value="全部" >全部</option>
+							<option value="本科" >本科</option>
+							<option value="硕士" >硕士</option>
+							<option value="博士" >博士</option>
+							<option value="海龟" >海龟</option>
+					</select>
+
+					<label for="salary"> 薪水:</label>
+					<select name="salary" id="salary">
+							<option value="全部" >全部</option>
+							<option value="0-8000" >0-8000</option>
+							<option value="8000-15000" >8000-15000</option>
+							<option value="15000-25000" >15000-25000</option>
+							<option value="25000以上" >25000以上</option>
+					</select>
+	</div>
+	<input type="submit" id="btnFinished" value="完成" />
+	</form>
+</div>
+%include footer.html
+</body>
+</html>

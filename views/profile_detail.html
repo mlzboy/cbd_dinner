@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CBD晚餐</title>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css">
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+</head>
+<body>
+<!-- Start of second page -->
+<div data-role="page" id="profile">
+
+	<div data-role="header" data-position="inline" data-backbtn="true">
+		<a href="#home" data-icon="back" data-direction="reverse" data-transition="slide">返回</a>
+		<h1>CBD晚餐 个人资料</h1>
+		<a href="/logout" data-icon="gear" class="ui-btn-right">收拢</a>
+	</div>
+
+	<div data-role="content">	
+		<div data-role="collapsible" data-collapsed="false" data-content-theme="c">
+			<h3>个人信息</h3>
+			<p><lable>年龄：<lable/><lable for="age">29<lable/></p>
+			<p><lable>婚姻状况：<lable/><lable for="marriage">否<lable/></p>
+			<p><lable>籍贯：<lable/><lable for="birthPlace">湖北<lable/></p>
+			<p><lable>邮箱：<lable/><lable for="email">test@gmail.com<lable/></p>
+			<p><lable>联系方式：<lable/><lable for="phone">18709087891<lable/></p>
+		</div>
+		<div data-role="collapsible" data-collapsed="false" data-content-theme="c">
+			<h3>教育经历</h3>
+			<p><lable>学历：<lable/><lable for="age">本科<lable/></p>
+			<p><lable>毕业院校：<lable/><lable for="age">武汉理工大学<lable/></p>
+			<p><lable>专业：<lable/><lable for="age">电子商务<lable/></p>
+		</div>
+		<div data-role="collapsible" data-content-theme="c">
+			<h3>工作背景</h3>
+			<p><lable>行业：<lable/><lable for="age">金融<lable/></p>
+			<p><lable>年薪：<lable/><lable for="age">1000000￥<lable/></p>
+			<p><lable>公司：<lable/><lable for="age">北京尚科股份有限公司<lable/></p>
+			<p><lable>公司地址：<lable/><lable for="age">北京市海淀区西平庄<lable/></p>
+		</div>
+		<div data-role="collapsible" data-content-theme="c">
+			<h3>兴趣爱好</h3>
+			<li>篮球、乒乓球</li>
+			<li>爬山</li>
+			<li>听音乐</li>
+			<li>看电影</li>
+			<li>跆拳道</li>
+		</div>
+		<div data-role="collapsible" data-content-theme="c">
+			<h3>其她</h3>
+			<p id="profile_intro">我永隔着遥远的距离梦中的小城让我在美好的日子里，遇见春暖花开红尘，隔着岁月的彼岸闲愁几许，岁月忽已晚花开花谢，刹那永恒秋韵阑珊，盈心此间阿莲我的爱情不是海千指百指弹，柔肠万转故秋情愫我是爸爸的包包转身，流年似水依依落雪，幽幽岁月百载春秋，眼睫匆匆浮尘在最美的年华里遇见你梅雪盛极，心络依依莲的心事回眸，忆千年，为你，倾一世不老的情</p>
+		</div>
+		<div data-role="collapsible" data-content-theme="c">
+			<h3>开放晚餐时间</h3>
+			<p>
+
+		<ul data-role="listview">
+			<li><a href="index.html">Inbox <span class="ui-li-count">12</span></a></li>
+			<li><a href="index.html">Outbox <span class="ui-li-count">0</span></a></li>
+			<li><a href="index.html">Drafts <span class="ui-li-count">4</span></a></li>
+			<li><a href="index.html">Sent <span class="ui-li-count">328</span></a></li>
+			<li><a href="index.html">Trash <span class="ui-li-count">62</span></a></li>
+		</ul>
+			
+			</p>
+		</div>
+
+		</br>
+		<ul data-role="listview">
+			<li data-role="list-divider">A</li>
+			<li><a href="index.html">Inbox <span class="ui-li-count">12</span></a></li>
+			<li><a href="index.html">Outbox <span class="ui-li-count">0</span></a></li>
+			<li><a href="index.html">Drafts <span class="ui-li-count">4</span></a></li>
+			<li><a href="index.html">Sent <span class="ui-li-count">328</span></a></li>
+			<li><a href="index.html">Trash <span class="ui-li-count">62</span></a></li>
+		</ul>
+		</br>
+		</br>
+
+		<ul data-role="listview" data-inset="true" data-icon="star">
+			<li data-role="list-divider">Divider</li>
+			<li><a href="index.html">Inbox <span class="ui-li-count">申请共进晚餐</span></a></li>
+			<li><a href="index.html">Outbox <span class="ui-li-count">已申请</span></a></li>
+			<li><a href="index.html">Sent <span class="ui-li-count">328</span></a></li>
+		</ul>
+		<a href="" data-role="button" id="profile_logout" data-theme="b">邀请与他一起晚餐</a>
+		<a href="" data-role="button" id="profile_logout" data-theme="e">退出</a>
+	</div><!-- /content -->
+
+	<!-- <input type="submit" id="btnFinished" value="完成" /> -->
+	<!--persistentBar-->
+	<div data-role="footer" data-position="fixed">
+	   <div data-role="navbar">
+					<ul>
+							<li><a href="#home">首页</a></li>
+							<li><a href="#profile">个人信息</a></li>
+							<li><a href="#about">关于</a></li>
+							<!-- <li><a href="#persistentBar" class="ui-btn-active ui-state-persist">PersistentBar</a></li>-->
+					</ul>
+			</div>
+	</div>
+</div><!-- /page -->
+</body>
+</html>

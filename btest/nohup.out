@@ -1,0 +1,62 @@
+Bottle v0.12-dev server starting up (using WSGIRefServer())...
+Listening on http://0.0.0.0:8000/
+Hit Ctrl-C to quit.
+
+10.12.117.83 - - [05/Dec/2013 07:05:18] "GET /uploads/%E5%B7%A5.jpg HTTP/1.1" 200 21523
+10.12.117.83 - - [05/Dec/2013 07:05:18] "GET /uploads/%E5%B7%A5.jpg HTTP/1.1" 304 0
+10.12.117.83 - - [05/Dec/2013 07:05:23] "GET /upload HTTP/1.1" 200 201
+10.12.117.83 - - [05/Dec/2013 07:05:50] "POST /upload HTTP/1.1" 200 175
+Bottle v0.12-dev server starting up (using WSGIRefServer())...
+Listening on http://0.0.0.0:8000/
+Hit Ctrl-C to quit.
+
+10.12.117.83 - - [05/Dec/2013 07:06:51] "GET /upload HTTP/1.1" 200 201
+10.12.117.83 - - [05/Dec/2013 07:06:57] "POST /upload HTTP/1.1" 200 174
+10.12.117.83 - - [05/Dec/2013 07:07:12] "GET /uploads/20131205_070657_191.jpg HTTP/1.1" 200 4319
+10.12.117.83 - - [05/Dec/2013 07:07:16] "GET /uploads/20131205_070657_191.jpg HTTP/1.1" 304 0
+10.12.104.178 - - [05/Dec/2013 09:23:50] "POST /upload HTTP/1.1" 200 17
+10.12.124.61 - - [05/Dec/2013 09:25:53] "GET /upload HTTP/1.1" 200 201
+10.12.124.61 - - [05/Dec/2013 09:25:53] "GET /favicon.ico HTTP/1.1" 404 747
+10.12.124.61 - - [05/Dec/2013 09:26:48] "POST /upload HTTP/1.1" 200 174
+10.12.124.61 - - [05/Dec/2013 09:27:07] "GET /uploads/20131205_092648_651.jpg HTTP/1.1" 200 1267295
+10.12.124.61 - - [05/Dec/2013 09:27:50] "GET /upload HTTP/1.1" 200 201
+10.12.104.178 - - [05/Dec/2013 09:32:14] "POST /upload HTTP/1.1" 200 17
+10.12.124.61 - - [05/Dec/2013 09:35:45] "POST /upload HTTP/1.1" 200 174
+10.12.124.61 - - [05/Dec/2013 09:35:58] "GET /uploads/20131205_093545_742.jpg HTTP/1.1" 200 6115
+10.12.104.178 - - [05/Dec/2013 09:45:21] "POST /upload HTTP/1.1" 200 17
+10.12.124.61 - - [05/Dec/2013 09:48:13] "GET /upload HTTP/1.1" 200 201
+10.12.104.178 - - [05/Dec/2013 09:57:03] "POST /upload HTTP/1.1" 200 17
+10.12.124.61 - - [05/Dec/2013 11:28:17] "GET /upload HTTP/1.1" 200 201
+10.12.124.61 - - [05/Dec/2013 11:35:38] "GET /upload HTTP/1.1" 200 201
+10.12.124.61 - - [05/Dec/2013 11:35:50] "GET /uploads/ HTTP/1.1" 404 741
+10.12.124.61 - - [05/Dec/2013 11:36:01] "GET /upload HTTP/1.1" 200 201
+10.12.124.61 - - [05/Dec/2013 11:36:11] "GET /upload HTTP/1.1" 200 201
+10.12.124.61 - - [05/Dec/2013 13:04:47] "GET /upload HTTP/1.1" 200 201
+10.12.104.178 - - [05/Dec/2013 13:07:40] "POST /upload HTTP/1.1" 200 17
+10.12.104.178 - - [05/Dec/2013 13:19:18] "POST /upload HTTP/1.1" 200 17
+10.12.104.178 - - [05/Dec/2013 13:30:19] "POST /upload HTTP/1.1" 200 17
+10.12.104.178 - - [05/Dec/2013 13:41:28] "POST /upload HTTP/1.1" 200 17
+Traceback (most recent call last):
+  File "/root/cbd/btest/bottle.py", line 763, in _handle
+    return route.call(**args)
+  File "/root/cbd/btest/bottle.py", line 1595, in wrapper
+    rv = callback(*a, **ka)
+  File "./btest.py", line 22, in do_upload
+    name = request.forms.name
+  File "/root/cbd/btest/bottle.py", line 163, in __get__
+    if key not in storage: storage[key] = self.getter(obj)
+  File "/root/cbd/btest/bottle.py", line 977, in forms
+    for name, item in self.POST.allitems():
+  File "/root/cbd/btest/bottle.py", line 163, in __get__
+    if key not in storage: storage[key] = self.getter(obj)
+  File "/root/cbd/btest/bottle.py", line 1079, in POST
+    data = FieldStorage(**args)
+  File "/opt/dj2/python/lib/python2.7/cgi.py", line 507, in __init__
+    self.read_multi(environ, keep_blank_values, strict_parsing)
+  File "/opt/dj2/python/lib/python2.7/cgi.py", line 621, in read_multi
+    raise ValueError, 'Invalid boundary in multipart form: %r' % (ib,)
+ValueError: Invalid boundary in multipart form: ''
+10.12.104.178 - - [05/Dec/2013 13:49:06] "POST /upload HTTP/1.1" 500 752
+10.12.104.178 - - [05/Dec/2013 13:50:49] "POST /upload HTTP/1.1" 200 17
+10.12.104.178 - - [05/Dec/2013 13:59:57] "POST /upload HTTP/1.1" 200 174
+10.12.124.61 - - [05/Dec/2013 14:01:03] "GET /uploads/20131205_135957_744.jpg HTTP/1.1" 200 4877

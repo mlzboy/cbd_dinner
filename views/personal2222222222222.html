@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>textinput demo</title>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css">
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+
+</head>
+<body>
+<div data-role="page" id="page1">
+<div data-role="header">
+<h1>个人信息</h1>
+</div>
+<div data-role="content">	
+
+	<!--
+				<div data-role="collapsible-set" data-theme="b" data-content-theme="d" data-inset="false">
+				<div data-role="collapsible">
+					<h2>Mailbox</h2>
+					<ul data-role="listview">
+						<li><a href="index.html">Inbox <span class="ui-li-count">12</span></a></li>
+						<li><a href="index.html">Outbox <span class="ui-li-count">0</span></a></li>
+						<li><a href="index.html">Drafts <span class="ui-li-count">4</span></a></li>
+						<li><a href="index.html">Sent <span class="ui-li-count">328</span></a></li>
+						<li><a href="index.html">Trash <span class="ui-li-count">62</span></a></li>
+					</ul>
+				</div>
+				</div>
+				<div data-role="collapsible-set" data-theme="b" data-content-theme="d" data-inset="false">				
+				<div data-role="collapsible">
+					<h2>Calendar</h2>
+					<ul data-role="listview" data-theme="d" data-divider-theme="d">
+						<li data-role="list-divider">Friday, October 8, 2010 <span class="ui-li-count">2</span></li>
+						<li><a href="index.html">
+								<h3>Stephen Weber</h3>
+								<p><strong>You've been invited to a meeting at Filament Group in Boston, MA</strong></p>
+								<p>Hey Stephen, if you're available at 10am tomorrow, we've got a meeting with the jQuery team.</p>
+								<p class="ui-li-aside"><strong>6:24</strong>PM</p>
+						</a></li>
+						<li><a href="index.html">
+							<h3>jQuery Team</h3>
+							<p><strong>Boston Conference Planning</strong></p>
+							<p>In preparation for the upcoming conference in Boston, we need to start gathering a list of sponsors and speakers.</p>
+							<p class="ui-li-aside"><strong>9:18</strong>AM</p>
+						</a></li>
+						<li data-role="list-divider">Thursday, October 7, 2010 <span class="ui-li-count">1</span></li>
+						<li><a href="index.html">
+							<h3>Avery Walker</h3>
+							<p><strong>Re: Dinner Tonight</strong></p>
+							<p>Sure, let's plan on meeting at Highland Kitchen at 8:00 tonight. Can't wait! </p>
+							<p class="ui-li-aside"><strong>4:48</strong>PM</p>
+						</a></li>
+						<li data-role="list-divider">Wednesday, October 6, 2010 <span class="ui-li-count">3</span></li>
+						<li><a href="index.html">
+							<h3>Amazon.com</h3>
+							<p><strong>4-for-3 Books for Kids</strong></p>
+							<p>As someone who has purchased children's books from our 4-for-3 Store, you may be interested in these featured books.</p>
+							<p class="ui-li-aside"><strong>12:47</strong>PM</p>
+						</a></li>
+					</ul>
+				</div>
+				</div>
+				<div data-role="collapsible-set" data-theme="b" data-content-theme="d" data-inset="false">	
+				<div data-role="collapsible">
+					<h2>Contacts</h2>
+					<ul data-role="listview" data-autodividers="true" data-theme="d" data-divider-theme="d">
+						<li><a href="index.html">Adam Kinkaid</a></li>
+						<li><a href="index.html">Alex Wickerham</a></li>
+						<li><a href="index.html">Avery Johnson</a></li>
+						<li><a href="index.html">Bob Cabot</a></li>
+						<li><a href="index.html">Caleb Booth</a></li>
+						<li><a href="index.html">Christopher Adams</a></li>
+						<li><a href="index.html">Culver James</a></li>	
+					</ul>
+				</div>
+			</div>
+			
+	<div class="content-primary">-->
+	
+	
+	 <ul data-role="listview" data-inset="true" data-theme="d" data-dividertheme="c"> 
+			<li data-role="list-divider">Divider</li>
+			<li><a href="index.html">
+					<p><lable>餐厅：娘惹厨房</lable></p>
+					<p>地点：国贸一期 餐厅电话 010-xxxxx</strong></p>
+					<p>时间：2013年12月6日 晚上7点</strong></p>
+					<p>AA套餐，已支付25元前往就餐保证金</p>
+			</a></li>
+			<li data-role="list-divider">Divider</li>
+			<li><a href="index.html">Outbox <span class="ui-li-count">0</span></a></li>
+			<li><a href="index.html">Sent <span class="ui-li-count">328</span></a></li>
+			
+		</ul>
+		<ul data-role="listview" data-inset="true" data-theme="d" data-divider-theme="e"> 
+			<li data-role="list-divider">Divider</li>
+			<li><a href="index.html">
+					<p><lable>餐厅：娘惹厨房</lable></p>
+					<p>地点：国贸一期 餐厅电话 010-xxxxx</strong></p>
+					<p>时间：2013年12月6日 晚上7点</strong></p>
+					<p>AA套餐，已支付25元前往就餐保证金</p>
+			</a></li>
+			<li data-role="list-divider">Divider</li>
+			<li><a href="index.html">Outbox <span class="ui-li-count">0</span></a></li>
+			<li><a href="index.html">Sent <span class="ui-li-count">328</span></a></li>
+			
+		</ul>
+	
+	
+		<ul data-role="listview" data-inset="true" data-theme="c">
+			<li data-role="list-divider">Divider</li>
+			<li><a href="index.html">
+					<p><lable>餐厅：娘惹厨房</lable></p>
+					<p>地点：国贸一期 餐厅电话 010-xxxxx</strong></p>
+					<p>时间：2013年12月6日 晚上7点</strong></p>
+					<p>AA套餐，已支付25元前往就餐保证金</p>
+			</a></li>
+			<li><a href="index.html">Outbox <span class="ui-li-count">0</span></a></li>
+			<li><a href="index.html">Sent <span class="ui-li-count">328</span></a></li>
+		</ul>
+
+		<ul data-role="listview" data-inset="true">
+			<li>
+				<img src="images/album-bb.jpg" />
+				<h3><a href="index.html">Broken Bells</a></h3>
+				<p>Broken Bells</p>
+				<a href="index.html">Purchase album</a>
+			</li>
+			<li>
+				<img src="images/album-hc.jpg" />
+				<h3><a href="index.html">Warning</a></h3>
+				<p>Hot Chip</p>
+				<a href="index.html">Purchase album</a>
+			</li>
+		</ul>
+		
+		<ul data-role="listview" data-inset="true" data-theme="d" data-dividertheme="c">
+			<li><a href="index.html">
+					<p><lable>餐厅：娘惹厨房</lable></p>
+					<p>地点：国贸一期 餐厅电话 010-xxxxx</strong></p>
+					<p>时间：2013年12月6日 晚上7点</strong></p>
+					<p>AA套餐，已支付25元前往就餐保证金</p>
+			</a></li>
+
+			<li><a href="/profilet" user_id="">
+				<img src="images/album-hc.jpg">
+				<h2>Broken Bells</h2>
+				<p>Broken Bells</p></a>
+			</li>
+			<li><a href="index.html">头像:<img src="images/album-hc.jpg"></a></li>
+			<li><a href="index.html">昵称:mlzboy</a></li>			
+			<li><a href="index.html">性别:男</a></li>
+			<li><a href="index.html">身高:175cm</a></li>
+			<li><a href="index.html">体重:73kg</a></li>
+			<li><a href="index.html">星座:双子座</a></li>
+			<li><a href="index.html">教育背景:硕士</a></li>
+			<li><a href="index.html">海外求学经历:英国</a></li>
+			<li><a href="index.html">工作信息:互联网行业 it工程师</a></li>
+			<li><a href="index.html">爱好:美剧电影</a></li>
+			<li><a href="index.html">个性签名:xoxo grsp girl</a></li>
+			<li><a href="index.html">籍贯:浙江</a></li>
+			<li><a href="index.html">状态:单身</a></li>
+			<li><a href="index.html">公司:德勤</a></li>
+</ul>		
+		<ul data-role="listview" data-inset="true" data-theme="c">
+			<li data-role="list-divider">联系方式</li>
+			<li><a href="index.html">手机:13426444511</a></li>
+			<li><a href="index.html">微信:mlzboy</a></li>	
+			<li><a href="index.html">qq:1036130199</a></li>				
+		</ul>
+		
+		<ul data-role="listview" data-inset="true" data-theme="c">
+			<li data-role="list-divider">生活相册</li>
+			<li>需要对方同意与您晚餐可见</li>		
+		</ul>		
+		<ul data-role="listview" data-inset="true" data-theme="d" data-dividertheme="c">
+			<li data-role="list-divider">Divider</li>
+			<li><a href="index.html">
+					<p><lable>餐厅：娘惹厨房</lable></p>
+					<p>地点：国贸一期 餐厅电话 010-xxxxx</strong></p>
+					<p>时间：2013年12月6日 晚上7点</strong></p>
+					<p>AA套餐，已支付25元前往就餐保证金</p>
+			</a></li>
+			<li><a href="index.html">Outbox <span class="ui-li-count">0</span></a></li>
+			<li><a href="index.html">Sent <span class="ui-li-count">328</span></a></li>
+		</ul>
+
+
+		
+		<ul data-role="listview" data-inset="true" data-theme="c"> 
+			<li data-role="list-divider">开放晚餐 <span class="ui-li-count">2</span></li>
+			<li><a href="index.html">
+				
+					<p>餐厅：娘惹厨房</p>
+					<p>地点：国贸一期 餐厅电话 010-xxxxx</strong></p>
+					<p>时间：2013年12月6日 晚上7点</strong></p>
+					<p>状态：mlzboy已支付25元前往就餐保证金</p>
+					<p>备注：AA套餐</p>
+				
+			</a></li>
+			<li><a href="index.html">
+				
+				<h3>jQuery Team</h3>
+				<p><strong>Boston Conference Planning</strong></p>
+				<p>In preparation for the upcoming conference in Boston, we need to start gathering a list of sponsors and speakers.</p>
+				<p class="ui-li-aside"><strong>9:18</strong>AM</p>
+				<p class="ui-li-aside"><strong>9:18</strong>AM</p>
+				
+			</a></li>
+		</ul>
+		
+		<a href="" data-role="button" id="profile_logout" data-theme="b">邀请与他一起晚餐</a>
+		<a href="" data-role="button" id="profile_logout" data-theme="e">退出</a>
+		<h2></h2>
+		</br>
+		<p></p>
+		<ul data-role="listview" data-theme="d" data-divider-theme="d">
+			<li data-role="list-divider">Thursday, October 7, 2010 <span class="ui-li-count">1</span></li>
+			<li><a href="index.html">
+				<h3>Avery Walker</h3>
+				<p><strong>Re: Dinner Tonight</strong></p>
+				<p>Sure, let's plan on meeting at Highland Kitchen at 8:00 tonight. Can't wait! </p>
+				<p class="ui-li-aside"><strong>4:48</strong>PM</p>
+			</a></li>
+			<li data-role="list-divider">Wednesday, October 6, 2010 <span class="ui-li-count">3</span></li>
+			<li><a href="index.html">
+				<h3>Amazon.com</h3>
+				<p><strong>4-for-3 Books for Kids</strong></p>
+				<p>As someone who has purchased children's books from our 4-for-3 Store, you may be interested in these featured books.</p>
+				<p class="ui-li-aside"><strong>12:47</strong>PM</p>
+			</a></li>
+			<li><a href="index.html">
+				<h3>Mike Taylor</h3>
+				<p><strong>Re: This weekend in Maine</strong></p>
+				<p>Hey little buddy, sorry but I can't make it up to vacationland this weekend. Maybe next weekend?</p>
+				<p class="ui-li-aside"><strong>6:24</strong>AM</p>
+			</a></li>
+			<li><a href="index.html">
+				<h3>Redfin</h3>
+				<p><strong>Redfin listing updates for today</strong></p>
+				<p>There are 3 updates for the home on your watchlist: 1 updated MLS listing and 2 homes under contract.</p>
+				<p class="ui-li-aside"><strong>5:52</strong>AM</p>
+			</a></li>
+				<li data-role="list-divider">Tuesday, October 5, 2010 <span class="ui-li-count">3</span></li>
+				<li><a href="index.html">
+					<h3>Angela Smith</h3>
+					<p><strong>Link Request</strong></p>
+					<p>My name is Angela Smith, SEO Consultant. I've greatly enjoyed looking through your site and I was wondering if you'd be interested in providing a link.</p>
+					<p class="ui-li-aside"><strong>6:24</strong>AM</p>
+				</a></li>
+				<li><a href="index.html">
+					<h3>Mike Taylor</h3>
+					<p><strong>This weekend in Maine</strong></p>
+					<p>Sounds good, let me check into our plans.</p>
+					<p class="ui-li-aside"><strong>6:24</strong>AM</p>
+				</a></li>
+		</ul>
+		
+		<!--</div> -->		
+	<div class="content-primary">
+	
+
+						<div data-role="collapsible" data-theme="b" data-content-theme="d" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-inset="false">
+							<h2>Pets</h2>
+							<ul data-role="listview">
+								<li><a href="index.html">Canary</a></li>
+								<li><a href="index.html">Cat</a></li>
+								<li><a href="index.html">Dog</a></li>
+								<li><a href="index.html">Gerbil</a></li>
+								<li><a href="index.html">Iguana</a></li>
+								<li><a href="index.html">Mouse</a></li>
+							</ul>
+						</div><!-- /collapsible -->
+						<div data-role="collapsible" data-theme="b" data-content-theme="d" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-inset="false">
+							<h2>Farm animals</h2>
+							<ul data-role="listview">
+								<li><a href="index.html">Chicken</a></li>
+								<li><a href="index.html">Cow</a></li>
+								<li><a href="index.html">Duck</a></li>
+								<li><a href="index.html">Horse</a></li>
+								<li><a href="index.html">Pig</a></li>
+								<li><a href="index.html">Sheep</a></li>
+							</ul>
+						</div><!-- /collapsible -->
+						<div data-role="collapsible" data-theme="b" data-content-theme="d" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-inset="false">
+							<h2>Wild Animals</h2>
+							<ul data-role="listview">
+								<li><a href="index.html">Aardvark</a></li>
+								<li><a href="index.html">Alligator</a></li>
+								<li><a href="index.html">Ant</a></li>
+								<li><a href="index.html">Bear</a></li>
+								<li><a href="index.html">Beaver</a></li>
+								<li><a href="index.html">Cougar</a></li>
+								<li><a href="index.html">Dingo</a></li>
+							</ul>
+						</div><!-- /collapsible -->
+	</div>
+
+	
+</div>
+</body>
+</html>

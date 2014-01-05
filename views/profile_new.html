@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>mlzboy</title>
+<link rel="stylesheet" href="/static/jquery/jquery.mobile-1.3.2.min.css">
+<script src="/static/jquery/jquery-1.9.1.min.js"></script>
+<script src="/static/jquery/jquery.mobile-1.3.2.min.js"></script>
+</head>
+<body>
+<div data-role="page" id="page1">
+<div data-role="header" data-position="fixed">
+<h1>mlzbody</h1>
+</div>
+<div data-role="content">	
+		<div data-role="popup" id="popupPhotoLandscape" class="photopopup" data-overlay-theme="a" data-corners="false" data-tolerance="30,15" >
+		<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+			<img src="../images/1_org.jpg">
+		</a>
+		</div>
+
+		<ul data-role="listview" data-inset="true" data-theme="d" data-dividertheme="c">
+			<li>
+			头像:<img src="{{user["photo1"]}}">
+			</li>
+			<li>昵称:{{user["nickname"]}}</li>			
+			<li>性别:{{user["gender"]}}</li>
+			<li>身高:{{user["high"]}}</li>
+			<li>体重:{{user["weight"]}}</li>
+			<li>星座:双子座</li>
+			<li>教育背景:{{user["education"]}}</li>
+			<li>海外求学经历:英国</li>
+			<li>工作信息:{{user["career"]}}</a></li>
+			<li>爱好:{{user["hobby"]}}</li>
+			<li>个性签名:{{user["sign"]}}</li>
+			<li>籍贯:{{user["born"]}}</li>
+			<li>状态:{{user["state"]}}</li>
+			<li>公司:{{user["company"]}}</li>
+		</ul>
+		
+		<ul data-role="listview" data-inset="true" data-theme="d" data-dividertheme="c">
+			<li data-role="list-divider">个人介绍</li>
+			<li>
+				{{user["intro"]}}
+			</li>
+		</ul>
+
+		
+		<ul data-role="listview" data-inset="true" data-theme="c">
+			<li data-role="list-divider">联系方式</li>
+			<li>需要对方同意与您晚餐可见</li>
+			<!--
+				<li>手机:13426444511</li>
+				<li>微信:mlzboy</li>	
+				<li>qq:1036130199</li>		
+			-->		
+		</ul>
+		
+		<ul data-role="listview" data-inset="true" data-theme="c">
+			<li data-role="list-divider">生活相册</li>
+			<li>需要对方同意与您晚餐可见</li>		
+		</ul>		
+		
+		<ul data-role="listview" data-inset="true" data-theme="c"> 
+			<li data-role="list-divider">开放晚餐 <span class="ui-li-count">2</span></li>
+%for dinner in dinners:
+			<li>
+				<a href="/pay/{{dinner["id"]}}" rel="external">
+					<p>餐厅：{{dinner["rest"]["name"]}}</p>
+					<p>地点：{{dinner["rest"]["place"]}}</strong></p>
+					<p>时间：{{dinner["eat_on"]}}</strong></p>
+					<p>状态：{{dinner["user_creator"]["nickname"]}}已支付25元前往就餐保证金</p>
+					<p>备注：{{dinner["desc"]}}</p>
+				</a>
+			</li>
+%end for
+		</ul>
+		
+		<a href="/invte_dinner/{{user["id"]}}" data-role="button" id="profile_logout" data-theme="b" rel="external">邀请与他一起晚餐</a>
+</div>
+</body>
+</html>

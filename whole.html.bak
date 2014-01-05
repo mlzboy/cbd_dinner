@@ -1,0 +1,268 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CBD晚餐</title>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css">
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$( "#home" ).on( "pageshow", function( event, ui ) {
+	//console.debug( "This page was just hidden: " + ui.prevPage );
+	//console.debug(ui.nextPage);
+	});
+
+	$("#profile").on("click tap", function(event){
+		event.preventDefault();
+		theback={msg:"ok"};
+		if(theback.msg=='ok')
+		{
+			$.mobile.navigate("#profile");
+		}
+		else
+		{
+			$.mobile.navigate("#register");
+		}
+	});
+});
+
+
+</script>
+</head>
+<body>
+<div data-role="page" id="home">
+		<div data-role="header" data-position="inline" data-backbtn="false">
+			<h1>CBD晚餐 首页</h1>
+			<a href="#filters" data-icon="gear" class="ui-btn-right">筛选</a>
+		</div>
+		<div data-role="content">	
+			<ul data-role="listview" data-inset="true">
+				<li><a href="#">
+					<img src="">
+					<h2>Broken Bells</h2>
+					<p>Broken Bells</p></a>
+				</li>
+				<li><a href="#">
+					<img src="">
+					<h2>董小姐</h2>
+					<p>得一城终老，找一人白首</p></a>
+				</li>
+				<li><a href="#">
+					<img src="">
+					<h2>Wolfgang Amadeus Phoenix</h2>
+					<p>Phoenix</p></a>
+				</li>
+			</ul>
+		</div>
+
+		<div data-role="footer" data-position="fixed">
+		   <div data-role="navbar">
+						<ul>
+								<li><a href="#home">首页</a></li>
+								<li><a href="" id="profile">个人信息</a></li>
+								<li><a href="#about">关于</a></li>
+								<!-- <li><a href="#persistentBar" class="ui-btn-active ui-state-persist">PersistentBar</a></li>-->
+						</ul>
+				</div><!-- /navbar -->
+		</div>
+</div>
+
+
+<div data-role="page" id="filters">
+	<div data-role="header" data-position="inline" data-backbtn="false">
+		<h1>CBD晚餐 筛选条件</h1>
+		<a href="#home" data-icon="check" class="ui-btn-right">完成</a>
+		<!--<input type="submit" id="btnFinished" value="完成" data-icon="check" class="ui-btn-right" />
+		<span data-ajax="false" data-icon="check" class="ui-btn-right" data-role="button" id="finished">完成</span>-->
+		
+	</div>
+	<div data-role="content">
+					<label for="gender"> 性别:</label>
+					<select name="gender" id="gender">
+							<option value="全部" >全部</option>
+							<option value="男" >男</option>
+							<option value="女" >女</option>
+					</select>
+
+					<label for="education"> 学历:</label>
+					<select name="education" id="education">
+							<option value="全部" >全部</option>
+							<option value="本科" >本科</option>
+							<option value="硕士" >硕士</option>
+							<option value="博士" >博士</option>
+							<option value="海龟" >海龟</option>
+					</select>
+
+					<label for="salary"> 薪水:</label>
+					<select name="salary" id="salary">
+							<option value="全部" >全部</option>
+							<option value="0-8000" >0-8000</option>
+							<option value="8000-15000" >8000-15000</option>
+							<option value="15000-25000" >15000-25000</option>
+							<option value="25000以上" >25000以上</option>
+					</select>
+	</div>
+	<!-- <input type="submit" id="btnFinished" value="完成" /> -->
+
+	<div data-role="footer" data-position="fixed">
+	   <div data-role="navbar">
+					<ul>
+							<li><a href="#home">首页</a></li>
+							<li><a href="#profile">个人信息</a></li>
+							<li><a href="#about">关于</a></li>
+							<!-- <li><a href="#persistentBar" class="ui-btn-active ui-state-persist">PersistentBar</a></li>-->
+					</ul>
+			</div><!-- /navbar -->
+	</div>
+</div>
+
+
+
+
+
+<!-- Start of second page -->
+<div data-role="page" id="profile">
+
+	<div data-role="header" data-position="inline" data-backbtn="true">
+		<a href="#home" data-icon="back" data-rel="back">返回</a>
+		<h1>CBD晚餐 个人资料</h1>
+		<a href="/logout" data-icon="gear" class="ui-btn-right">收拢</a>
+	</div>
+
+	<div data-role="content">	
+		<div data-role="collapsible" data-collapsed="false" data-content-theme="c">
+			<h3>个人信息</h3>
+			<p><lable>年龄：<lable/><lable for="age">29<lable/></p>
+			<p><lable>婚姻状况：<lable/><lable for="marriage">否<lable/></p>
+			<p><lable>籍贯：<lable/><lable for="birthPlace">湖北<lable/></p>
+			<p><lable>邮箱：<lable/><lable for="email">test@gmail.com<lable/></p>
+			<p><lable>联系方式：<lable/><lable for="phone">18709087891<lable/></p>
+		</div>
+		<div data-role="collapsible" data-collapsed="false" data-content-theme="c">
+			<h3>教育经历</h3>
+			<p><lable>学历：<lable/><lable for="age">本科<lable/></p>
+			<p><lable>毕业院校：<lable/><lable for="age">武汉理工大学<lable/></p>
+			<p><lable>专业：<lable/><lable for="age">电子商务<lable/></p>
+		</div>
+		<div data-role="collapsible" data-content-theme="c">
+			<h3>工作背景</h3>
+			<p><lable>行业：<lable/><lable for="age">金融<lable/></p>
+			<p><lable>年薪：<lable/><lable for="age">1000000￥<lable/></p>
+			<p><lable>公司：<lable/><lable for="age">北京尚科股份有限公司<lable/></p>
+			<p><lable>公司地址：<lable/><lable for="age">北京市海淀区西平庄<lable/></p>
+		</div>
+		<div data-role="collapsible" data-content-theme="c">
+			<h3>兴趣爱好</h3>
+			<li>篮球、乒乓球</li>
+			<li>爬山</li>
+			<li>听音乐</li>
+			<li>看电影</li>
+			<li>跆拳道</li>
+		</div>
+		<div data-role="collapsible" data-content-theme="c">
+			<h3>其她</h3>
+			<p>此生，你我永隔着遥远的距离梦中的小城让我在美好的日子里，遇见春暖花开红尘，隔着岁月的彼岸闲愁几许，岁月忽已晚花开花谢，刹那永恒秋韵阑珊，盈心此间阿莲我的爱情不是海千指百指弹，柔肠万转故秋情愫我是爸爸的包包转身，流年似水依依落雪，幽幽岁月百载春秋，眼睫匆匆浮尘在最美的年华里遇见你梅雪盛极，心络依依莲的心事回眸，忆千年，为你，倾一世不老的情</p>
+		</div>
+	</div><!-- /content -->
+
+	<!-- <input type="submit" id="btnFinished" value="完成" /> -->
+	<!--persistentBar-->
+	<div data-role="footer" data-position="fixed">
+	   <div data-role="navbar">
+					<ul>
+							<li><a href="#home">首页</a></li>
+							<li><a href="#profile">个人信息</a></li>
+							<li><a href="#about">关于</a></li>
+							<!-- <li><a href="#persistentBar" class="ui-btn-active ui-state-persist">PersistentBar</a></li>-->
+					</ul>
+			</div>
+	</div>
+</div><!-- /page -->
+
+
+<div data-role="page" id="login">
+
+	<div data-role="header" data-position="inline" data-backbtn="false">
+		<h1>CBD晚餐	登陆页面</h1>
+		<a href="#register" data-icon="forward" class="ui-btn-right">注册</a>
+	</div>
+
+	<div data-role="content">	
+		<label for="username">用户名:</label>
+		<input type="text" name="username" id="username" value="" />
+		<label for="passwd">密码:</label>
+		<input type="password" name="passwd" id="passwd" value="" />
+		<input type="button" id="btnLogin"  value="登陆" />
+	</div><!-- /content -->
+
+	<div data-role="footer" data-position="fixed">
+	   <div data-role="navbar">
+					<ul>
+							<li><a href="#home">首页</a></li>
+							<li><a href="#profile">个人信息</a></li>
+							<li><a href="#about">关于</a></li>
+							<!-- <li><a href="#persistentBar" class="ui-btn-active ui-state-persist">PersistentBar</a></li>-->
+					</ul>
+		</div>
+	</div>
+</div><!-- /page -->
+
+
+
+
+
+<!-- Start of second page -->
+<div data-role="page" id="register">
+
+	<div data-role="header">
+		<h1>CBD晚餐	注册页面</h1>
+		<a href="#login" data-icon="forward" class="ui-btn-right">登陆</a>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		<label for="username">用户名:</label>
+		<input type="text" name="username" id="username" value="" />
+		<label for="passwd">密码:</label>
+		<input type="password" name="passwd" id="passwd" value="" />
+		<label for="passwd_confirm">密码确认 :</label>
+		<input type="password" name="passwd_confirm" id="passwd_confirm" value="" />
+		<input type="button" value="注册" id="btnRegister"/>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+	   <div data-role="navbar">
+					<ul>
+							<li><a href="#home">首页</a></li>
+							<li><a href="#profile">个人信息</a></li>
+							<li><a href="#about">关于</a></li>
+							<!-- <li><a href="#persistentBar" class="ui-btn-active ui-state-persist">PersistentBar</a></li>-->
+					</ul>
+		</div>
+	</div><!-- /header -->
+</div><!-- /page -->
+
+
+
+
+
+
+<!-- Start of second page -->
+<div data-role="page" id="demo">
+
+	<div data-role="header">
+		<h1>Bar</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		<p>I'm first in the source order so I'm shown as the page.</p>		
+		<p><a href="#foo">Back to foo</a></p>	
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div><!-- /header -->
+</div><!-- /page -->
+</body>
+</html>
